@@ -6,7 +6,9 @@
 
 ## 보기
 
-`index.html`을 브라우저로 열면 됩니다. 빌드 과정은 없습니다. 로컬 서버로 보려면:
+배포: **https://kong-namul.github.io/content-detail/** (GitHub Pages, `main` 브랜치 루트)
+
+로컬에서는 `index.html`을 브라우저로 열면 됩니다. 빌드 과정은 없습니다. 로컬 서버로 보려면:
 
 ```bash
 python3 -m http.server 8000
