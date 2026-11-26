@@ -1,0 +1,89 @@
+/* ==========================================================================
+   B 챕터형 — 스타일 공통 토큰 (SSOT)
+   참고: Koto, 플러스엑스. 다크 배경 · 풀블리드 히어로 · 하단 고정 챕터 바
+   이 스타일의 모든 페이지는 이 파일의 토큰만 쓴다. 값을 바꾸면 ?v= 를 올린다.
+   ========================================================================== */
+
+:root {
+  /* 타입 스케일 (전 스타일 공통 값) */
+  --fs-72: 72px;
+  --fs-48: 48px;
+  --fs-32: 32px;
+  --fs-24: 24px;
+  --fs-22: 22px;
+  --fs-18: 18px;
+  --fs-14: 14px;
+
+  /* 역할 */
+  --fs-display: var(--fs-72);   /* H1 프로젝트 이름 */
+  --fs-stat: var(--fs-72);      /* Outcome 숫자 */
+  --fs-headline: var(--fs-48);  /* 챕터 헤드라인 */
+  --fs-tagline: var(--fs-32);   /* 클라이언트 브랜드 라인 */
+  --fs-lead: var(--fs-24);      /* 인트로 문단 */
+  --fs-body: var(--fs-18);
+  --fs-label: var(--fs-14);     /* 챕터 라벨, 메타, 챕터 바 */
+
+  /* 폰트 */
+  --font-sans: "Space Grotesk", "Pretendard Variable", "Pretendard", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-sans);
+  --fw-regular: 400;
+  --fw-medium: 500;
+
+  /* 행간 · 자간 */
+  --lh-display: 1;
+  --lh-heading: 1.1;
+  --lh-body: 1.55;
+  --ls-display: -0.03em;
+  --ls-heading: -0.02em;
+  --ls-label: 0.12em;
+
+  /* 색 */
+  --bg: #0b0b0c;
+  --fg: #f4f4f1;
+  --fg-muted: #9b9b97;
+  --line: #2a2a2d;
+  --ph-bg: #1c1c1f;
+  --ph-fg: #6e6e73;
+  --bar-bg: #18181b;
+  --bar-fg: #f4f4f1;
+  --tag-bg: #f4f4f1;  /* INTERACTIVE 같은 작은 태그 */
+  --tag-fg: #0b0b0c;
+
+  /* 레이아웃 */
+  --max: 1440px;
+  --gutter: 40px;
+  --gap: 16px;
+  --space-s: 24px;
+  --space-m: 48px;
+  --space-l: 120px;
+  --space-xl: 200px;
+  --bar-h: 56px;
+
+  /* 작은 간격 · 보조 행간 · 블록 크기 (2026-11-26 추가, 사용자 승인) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --lh-none: 1;
+  --lh-tight: 1.25;
+  --lh-snug: 1.4;
+  --surface: #18181b;     /* Outcome 숫자 타일 배경 (챕터 바 색과 분리) */
+  --hero-min-h: 480px;    /* 풀블리드 히어로 최소 높이 */
+  --stat-min-h: 280px;    /* Outcome 숫자 타일 최소 높이 */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-display: var(--fs-48);
+    --fs-stat: var(--fs-48);
+    --fs-headline: var(--fs-32);
+    --fs-tagline: var(--fs-24);
+    --gutter: 16px;
+    --gap: 8px;
+    --space-m: 32px;
+    --space-l: 80px;
+    --space-xl: 120px;
+    --stat-min-h: 200px;
+  }
+}

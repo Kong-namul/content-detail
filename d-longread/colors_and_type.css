@@ -1,0 +1,87 @@
+/* ==========================================================================
+   D 에디토리얼 롱리드형 — 스타일 공통 토큰 (SSOT)
+   참고: ustwo, Wolff Olins. 미색 배경 · 세리프 본문 · 좁은 칼럼 · 왼쪽에 걸린 인용
+   이 스타일의 모든 페이지는 이 파일의 토큰만 쓴다. 값을 바꾸면 ?v= 를 올린다.
+   ========================================================================== */
+
+:root {
+  /* 타입 스케일 (전 스타일 공통 값) */
+  --fs-72: 72px;
+  --fs-48: 48px;
+  --fs-32: 32px;
+  --fs-24: 24px;
+  --fs-22: 22px;
+  --fs-18: 18px;
+  --fs-14: 14px;
+
+  /* 역할 */
+  --fs-display: var(--fs-72);   /* H1 */
+  --fs-quote: var(--fs-32);     /* 큰 인용 */
+  --fs-h2: var(--fs-32);        /* 이야기형 H2 */
+  --fs-subtitle: var(--fs-24);  /* 서술형 부제 */
+  --fs-body: var(--fs-22);      /* 세리프 본문 */
+  --fs-meta: var(--fs-18);      /* 인용 출처, Project details 값 */
+  --fs-label: var(--fs-14);     /* 브레드크럼, 라벨 */
+  --fs-next: var(--fs-48);      /* Next Project 이름 (2026-11-26 추가) */
+  --fs-dropcap: var(--fs-72);   /* 첫 문단 드롭캡 (2026-11-26 추가) */
+
+  /* 폰트 */
+  --font-serif: "Newsreader", "Pretendard Variable", "Pretendard", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", "Pretendard Variable", "Pretendard", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-serif);
+  --fw-regular: 400;
+  --fw-medium: 500;
+
+  /* 행간 · 자간 */
+  --lh-display: 1.02;
+  --lh-heading: 1.2;
+  --lh-body: 1.6;
+  --ls-display: -0.025em;
+  --ls-heading: -0.01em;
+  --ls-label: 0.1em;
+
+  /* 색 */
+  --bg: #f6f2ea;
+  --fg: #1a1814;
+  --fg-muted: #6f675b;
+  --line: #dcd3c4;
+  --ph-bg: #e5ddcf;
+  --ph-fg: #978d7d;
+
+  /* 레이아웃 */
+  --max: 1280px;
+  --gutter: 40px;
+  --gap: 16px;
+  --measure: 680px;     /* 본문 칼럼 폭 */
+  --hang: 280px;        /* 인용이 걸리는 왼쪽 칼럼 폭 */
+  --space-s: 24px;
+  --space-m: 48px;
+  --space-l: 96px;
+  --space-xl: 160px;
+
+  /* 작은 간격 · 보조 행간 (2026-11-26 추가, 사용자 승인) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --lh-none: 1;
+  --lh-tight: 1.25;
+  --lh-snug: 1.4;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-display: var(--fs-48);
+    --fs-quote: var(--fs-24);
+    --fs-h2: var(--fs-24);
+    --fs-body: var(--fs-18);
+    --fs-next: var(--fs-32);
+    --fs-dropcap: var(--fs-48);
+    --gutter: 16px;
+    --gap: 8px;
+    --space-m: 32px;
+    --space-l: 64px;
+    --space-xl: 96px;
+  }
+}

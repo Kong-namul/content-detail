@@ -1,0 +1,168 @@
+/* ==========================================================================
+   shared/base.css — 스타일과 무관한 공통 (리셋, 본문 기본값, 자리표시 박스)
+   색·폰트·크기 값은 여기서 정하지 않는다. 각 스타일의 colors_and_type.css 토큰을 쓴다.
+   필요한 토큰: --bg --fg --fg-muted --ph-bg --ph-fg --font-body --fs-body --fs-14 --lh-body
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd, ul, ol {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   자리표시 박스 .ph
+   <div class="ph r-16x9" role="img" aria-label="Hero video">HERO VIDEO · 16:9</div>
+   -------------------------------------------------------------------------- */
+.ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  background: var(--ph-bg);
+  color: var(--ph-fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-14);
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ph--fill { height: 100%; }
+
+.r-21x9 { aspect-ratio: 21 / 9; }
+.r-16x9 { aspect-ratio: 16 / 9; }
+.r-3x2  { aspect-ratio: 3 / 2; }
+.r-4x3  { aspect-ratio: 4 / 3; }
+.r-1x1  { aspect-ratio: 1 / 1; }
+.r-3x4  { aspect-ratio: 3 / 4; }
+.r-9x16 { aspect-ratio: 9 / 16; }
+
+/* --------------------------------------------------------------------------
+   확인용 index.html 목록 (상세 페이지에서는 쓰지 않음)
+   -------------------------------------------------------------------------- */
+.catalog {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+.catalog__title {
+  font-size: var(--fs-32);
+  line-height: 1.2;
+  margin-bottom: 48px;
+}
+
+.catalog__list li {
+  border-top: 1px solid var(--line);
+}
+
+.catalog__list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.catalog__list a {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.catalog__list a:hover .catalog__name {
+  text-decoration: underline;
+}
+
+.catalog__type {
+  color: var(--fg-muted);
+  font-size: var(--fs-14);
+}
+
+.catalog__group + .catalog__group {
+  margin-top: 72px;
+}
+
+.catalog__lang {
+  margin-bottom: 16px;
+  font-size: var(--fs-18);
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.catalog__note {
+  margin-top: 48px;
+  color: var(--fg-muted);
+  font-size: var(--fs-14);
+}

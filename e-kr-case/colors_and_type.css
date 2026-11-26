@@ -1,0 +1,94 @@
+/* ==========================================================================
+   E 국내 케이스형 — 스타일 공통 토큰 (SSOT)
+   참고: 이모션글로벌, 바이널씨, 펜타브리드. Pretendard · 영문 대문자 라벨 + 국문 제목/본문
+   이 스타일의 모든 페이지는 이 파일의 토큰만 쓴다. 값을 바꾸면 ?v= 를 올린다.
+   ========================================================================== */
+
+:root {
+  /* 타입 스케일 (전 스타일 공통 값) */
+  --fs-72: 72px;
+  --fs-48: 48px;
+  --fs-32: 32px;
+  --fs-24: 24px;
+  --fs-22: 22px;
+  --fs-18: 18px;
+  --fs-14: 14px;
+
+  /* 역할 */
+  --fs-display: var(--fs-72);   /* 2단 타이틀의 프로젝트명 */
+  --fs-copy: var(--fs-48);      /* 2단 타이틀의 감성 카피 */
+  --fs-nav: var(--fs-48);       /* 하단 PREV / NEXT */
+  --fs-lead: var(--fs-32);      /* 대형 리드 문단 */
+  --fs-h2: var(--fs-32);        /* 섹션 국문 제목 */
+  --fs-h3: var(--fs-24);        /* 포인트 · 컨셉 제목 */
+  --fs-body: var(--fs-18);
+  --fs-label: var(--fs-14);     /* PROJECT GOAL 같은 영문 라벨, 메타 라벨 */
+
+  /* 폰트 */
+  --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-body: var(--font-sans);
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* 행간 · 자간 */
+  --lh-display: 1.15;
+  --lh-heading: 1.35;
+  --lh-body: 1.7;
+  --ls-display: -0.03em;
+  --ls-heading: -0.02em;
+  --ls-label: 0.08em;
+
+  /* 색 */
+  --bg: #ffffff;
+  --fg: #111111;
+  --fg-muted: #767676;
+  --line: #e4e4e4;
+  --surface: #f5f5f5;   /* 메타 영역, 앱 다운로드 버튼 배경 */
+  --ph-bg: #ededed;
+  --ph-fg: #9a9a9a;
+
+  /* 레이아웃 */
+  --max: 1280px;
+  --gutter: 40px;
+  --gap: 24px;
+  --label-col: 240px;   /* 왼쪽 라벨 칸 */
+  --space-s: 24px;
+  --space-m: 48px;
+  --space-l: 120px;
+  --space-xl: 160px;
+
+  /* 작은 간격 · 보조 행간 · 블록 크기 (2026-11-26 추가, 사용자 승인) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --lh-none: 1;
+  --lh-tight: 1.25;
+  --lh-snug: 1.4;
+  --header-h: 80px;            /* 상단 헤더 높이 */
+  --measure-wide: 1040px;      /* 대형 리드 문단 */
+  --measure: 760px;            /* 본문 · 크레딧 */
+  --measure-quote: 900px;      /* 인터뷰 인용 */
+  --store-min-w: 280px;        /* 앱 다운로드 버튼 */
+  --label-col-compact: 120px;  /* 모바일 크레딧 라벨 칸 */
+  --icon-size: 24px;           /* 햄버거 버튼 아이콘 */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-display: var(--fs-48);
+    --fs-copy: var(--fs-32);
+    --fs-nav: var(--fs-32);
+    --fs-lead: var(--fs-24);
+    --fs-h2: var(--fs-24);
+    --gutter: 20px;
+    --gap: 16px;
+    --space-m: 32px;
+    --space-l: 72px;
+    --space-xl: 96px;
+    --header-h: 64px;
+  }
+}

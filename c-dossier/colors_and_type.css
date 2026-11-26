@@ -1,0 +1,108 @@
+/* ==========================================================================
+   C 성과 도시에형 — 스타일 공통 토큰 (SSOT)
+   참고: Work & Co, Collins, Basic/Dept. 컬러 밴드 · 라벨 왼쪽/내용 오른쪽 · 큰 숫자
+   이 스타일의 모든 페이지는 이 파일의 토큰만 쓴다. 값을 바꾸면 ?v= 를 올린다.
+   --brand 는 "클라이언트 브랜드 컬러" 자리다. 클라이언트마다 맨 아래 [data-client] 블록을
+   하나씩 두고, 페이지는 <body data-client="…">로 고른다.
+   (사용자 승인: 상단 밴드 배경과 Outcomes 숫자에만 사용. 헤딩 글자색은 흑/백)
+   ========================================================================== */
+
+:root {
+  /* 타입 스케일 (전 스타일 공통 값) */
+  --fs-72: 72px;
+  --fs-48: 48px;
+  --fs-32: 32px;
+  --fs-24: 24px;
+  --fs-22: 22px;
+  --fs-18: 18px;
+  --fs-14: 14px;
+
+  /* 역할 */
+  --fs-display: var(--fs-72);   /* H1 클라이언트 이름 */
+  --fs-stat: var(--fs-72);      /* Outcomes 숫자 */
+  --fs-h2: var(--fs-48);        /* 테이크어웨이 챕터 제목 */
+  --fs-subtitle: var(--fs-32);  /* 세리프 부제 */
+  --fs-quote: var(--fs-32);     /* 인용 */
+  --fs-overview: var(--fs-24);  /* Overview 문단 */
+  --fs-h3: var(--fs-22);        /* 하위 기능 제목 */
+  --fs-body: var(--fs-18);
+  --fs-label: var(--fs-14);     /* 팩트시트 라벨, 캡션 */
+
+  /* 폰트 */
+  --font-sans: "Inter", "Pretendard Variable", "Pretendard", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Instrument Serif", "Pretendard Variable", "Pretendard", Georgia, "Times New Roman", serif;
+  --font-body: var(--font-sans);
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* 행간 · 자간 */
+  --lh-display: 1;
+  --lh-heading: 1.15;
+  --lh-body: 1.6;
+  --ls-display: -0.035em;
+  --ls-heading: -0.02em;
+  --ls-label: 0.08em;   /* 대문자 라벨 (사용자 승인 2026-11-26: 0.01em → 0.08em) */
+
+  /* 색 */
+  --bg: #ffffff;
+  --fg: #111111;
+  --fg-muted: #6a6a6a;
+  --line: #d9d9d9;
+  --ph-bg: #ececec;
+  --ph-fg: #8b8b8b;
+  --brand: var(--fg);   /* data-client 블록이 없을 때의 기본값 (흑) */
+  --on-brand: var(--bg);
+
+  /* 레이아웃 */
+  --max: 1440px;
+  --gutter: 40px;
+  --gap: 24px;
+  --label-col: 280px;   /* 팩트시트 왼쪽 라벨 칸 */
+  --space-s: 24px;
+  --space-m: 48px;
+  --space-l: 120px;
+  --space-xl: 180px;
+
+  /* 작은 간격 · 보조 행간 · 글줄 폭 (2026-11-26 추가, 사용자 승인) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --lh-none: 1;
+  --lh-tight: 1.25;
+  --lh-snug: 1.4;
+  --measure-text: 62ch;      /* 본문 문단 */
+  --measure-overview: 34em;  /* Overview 큰 문단 */
+  --measure-subtitle: 30ch;  /* 밴드 세리프 부제 */
+  --measure-quote: 26em;     /* 가운데 인용 */
+  --measure-caption: 28ch;   /* 숫자 아래 설명 */
+  --measure-feature: 14em;   /* 하위 기능 제목 */
+  --logo-max-w: 160px;       /* 수상·프레스 로고 자리 */
+  --index-col: 64px;         /* 01~03 번호 칸 */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-display: var(--fs-48);
+    --fs-stat: var(--fs-48);
+    --fs-h2: var(--fs-32);
+    --fs-subtitle: var(--fs-24);
+    --fs-quote: var(--fs-24);
+    --gutter: 16px;
+    --gap: 16px;
+    --space-m: 32px;
+    --space-l: 72px;
+    --space-xl: 96px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   클라이언트별 브랜드 컬러
+   새 프로젝트: 블록 하나 추가 → 페이지 <body data-client="이름">
+   -------------------------------------------------------------------------- */
+[data-client="fieldnote"] {
+  --brand: #1f4d3a;     /* Fieldnote 숲 초록 */
+  --on-brand: #ffffff;
+}

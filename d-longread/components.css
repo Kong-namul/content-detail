@@ -1,0 +1,329 @@
+/* ==========================================================================
+   D 에디토리얼 롱리드형 — 스타일 공통 블록
+   토큰만 사용한다 (colors_and_type.css). 색·폰트 크기 값 직접 입력 없음.
+   ========================================================================== */
+
+.page {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* 헤더 ------------------------------------------------------------------ */
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-s);
+  padding: var(--space-s) 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.site-header__mark {
+  font-family: var(--font-serif);
+  font-size: var(--fs-24);
+  letter-spacing: var(--ls-heading);
+  text-transform: none;
+}
+
+.site-header__nav {
+  display: flex;
+  gap: var(--space-m);
+}
+
+.site-header__nav { margin-left: auto; }
+.site-header__nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.lang-switch {
+  margin-left: var(--space-s);
+  white-space: nowrap;
+  color: var(--fg-muted);
+}
+
+.lang-switch b { font-weight: var(--fw-medium); color: var(--fg); }
+.lang-switch a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.crumbs {
+  padding: var(--space-m) 0 var(--space-s);
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.crumbs a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.crumbs ol { display: flex; flex-wrap: wrap; }
+.crumbs li + li::before { content: "/" / ""; margin: 0 var(--space-8); }
+
+/* 롱리드 그리드: 왼쪽 hang 칼럼 + 오른쪽 본문 칼럼 (오른쪽 정렬) ------------- */
+.story {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--measure));
+  column-gap: var(--space-m);
+}
+
+.story > * { grid-column: 2; }
+.story > .wide { grid-column: 1 / -1; }
+.story > .pull { grid-column: 1; justify-self: end; width: 100%; max-width: var(--hang); }
+
+/* 타이틀 ---------------------------------------------------------------- */
+.title {
+  padding-bottom: var(--space-l);
+}
+
+.title__h1 {
+  grid-column: 1 / -1;
+  font-size: var(--fs-display);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+}
+
+.title__sub {
+  margin-top: var(--space-s);
+  font-size: var(--fs-subtitle);
+  line-height: var(--lh-heading);
+  color: var(--fg-muted);
+}
+
+/* 히어로 · 미디어 ------------------------------------------------------- */
+.hero { margin-bottom: var(--space-l); }
+
+.media { margin: var(--space-l) 0; }
+
+.media--duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+/* 본문 ------------------------------------------------------------------ */
+.story > p ~ p { margin-top: var(--space-s); }
+
+.story p { font-weight: var(--fw-regular); }
+
+.story .lede::first-letter {
+  float: left;
+  padding: 0 var(--gap) 0 0;
+  font-size: var(--fs-dropcap);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+}
+
+.chapter { padding-top: var(--space-l); }
+
+.chapter__h2 {
+  margin-bottom: var(--space-s);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+/* 인용 ------------------------------------------------------------------ */
+.pull {
+  margin: 0;
+  align-self: start;
+  padding-top: var(--gap);
+  border-top: 1px solid var(--fg);
+}
+
+.pull--hang { grid-row: span 3; }
+.pull--beside { grid-row: 2 / span 2; }
+
+.pull__text {
+  font-size: var(--fs-24);
+  font-style: italic;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+.pull__by {
+  margin-top: var(--gap);
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  line-height: var(--lh-body);
+  color: var(--fg-muted);
+}
+
+.pull__by b { display: block; font-weight: var(--fw-medium); color: var(--fg); }
+
+/* 마무리 인용: 본문 칼럼 안 큰 인용 */
+.story > .pull--close {
+  justify-self: stretch;
+  max-width: none;
+  grid-column: 2;
+  margin-top: var(--space-l);
+}
+
+.pull--close .pull__text {
+  font-size: var(--fs-quote);
+  font-style: normal;
+}
+
+/* 결과물 목록 ----------------------------------------------------------- */
+.deliver {
+  margin-top: var(--space-s);
+  border-top: 1px solid var(--line);
+}
+
+.deliver li {
+  display: grid;
+  grid-template-columns: var(--space-m) 1fr;
+  padding: var(--gap) 0;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-body);
+  line-height: var(--lh-heading);
+}
+
+.deliver li::before {
+  content: "—" / "";
+  color: var(--fg-muted);
+}
+
+/* Project details ------------------------------------------------------- */
+.details {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-s);
+  border-top: 1px solid var(--fg);
+}
+
+.details__title {
+  grid-column: 1;
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.details__list {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.details__row {
+  display: grid;
+  grid-template-columns: var(--hang) 1fr;
+  gap: var(--space-s);
+  padding: var(--gap) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.details__row:first-child { padding-top: 0; }
+
+.details dt {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  align-self: center;
+}
+
+.details dd {
+  font-size: var(--fs-meta);
+  line-height: var(--lh-heading);
+}
+
+/* Next Project ---------------------------------------------------------- */
+.next {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-s);
+  border-top: 1px solid var(--fg);
+}
+
+.next__label {
+  grid-column: 1;
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.next__link {
+  grid-column: 2;
+  display: block;
+}
+
+.next__name {
+  margin: var(--gap) 0 var(--space-s);
+  font-size: var(--fs-next);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+}
+
+.next__link:hover .next__name { text-decoration: underline; text-underline-offset: 8px; }
+
+.next__meta {
+  margin-top: var(--gap);
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* 푸터 ------------------------------------------------------------------ */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-s);
+  margin-top: var(--space-xl);
+  padding: var(--space-m) 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.site-footer__talk {
+  font-family: var(--font-serif);
+  font-size: var(--fs-24);
+  letter-spacing: var(--ls-heading);
+  text-transform: none;
+  color: var(--fg);
+}
+
+/* 국문 조판 ------------------------------------------------------------- */
+:lang(ko) .story p,
+:lang(ko) .chapter__h2,
+:lang(ko) .title__sub,
+:lang(ko) .pull__text,
+:lang(ko) .deliver li,
+:lang(ko) .details dd,
+:lang(ko) .next__name { word-break: keep-all; overflow-wrap: break-word; }
+
+/* 모바일: 1열 ----------------------------------------------------------- */
+@media (max-width: 768px) {
+  .site-header { flex-wrap: wrap; }
+  .site-header__nav { gap: var(--space-s); }
+  .lang-switch { margin-left: auto; }
+
+  .story { display: block; }
+
+  .story > .pull,
+  .story > .pull--close {
+    max-width: none;
+    margin: var(--space-m) 0;
+  }
+
+  .story > .pull--close { margin-top: var(--space-l); }
+
+  .details__title,
+  .next__label { margin-bottom: var(--gap); }
+
+  .details__row { grid-template-columns: 1fr; gap: 0; }
+
+  .site-footer { flex-direction: column; }
+}

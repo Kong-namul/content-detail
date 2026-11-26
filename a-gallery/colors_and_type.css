@@ -1,0 +1,79 @@
+/* ==========================================================================
+   A 갤러리형 — 스타일 공통 토큰 (SSOT)
+   참고: Locomotive, Pentagram. 흰 배경 · 검정 글자 · 큰 이름 · 넉넉한 여백
+   이 스타일의 모든 페이지는 이 파일의 토큰만 쓴다. 값을 바꾸면 ?v= 를 올린다.
+   ========================================================================== */
+
+:root {
+  /* 타입 스케일 (전 스타일 공통 값) */
+  --fs-72: 72px;
+  --fs-48: 48px;
+  --fs-32: 32px;
+  --fs-24: 24px;
+  --fs-22: 22px;
+  --fs-18: 18px;
+  --fs-14: 14px;
+
+  /* 역할 */
+  --fs-display: var(--fs-72);   /* H1 프로젝트 이름 */
+  --fs-statement: var(--fs-48); /* 미디어 사이 큰 문장 */
+  --fs-h2: var(--fs-32);        /* Next Project 제목 등 */
+  --fs-lead: var(--fs-24);      /* 태그라인, About 첫 문단 */
+  --fs-body: var(--fs-18);
+  --fs-label: var(--fs-14);     /* 섹션 라벨, 태그, 메타 */
+
+  /* 폰트 */
+  --font-sans: "Inter Tight", "Pretendard Variable", "Pretendard", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-sans);
+  --fw-regular: 400;
+  --fw-medium: 500;
+
+  /* 행간 · 자간 */
+  --lh-display: 0.95;
+  --lh-heading: 1.15;
+  --lh-body: 1.55;
+  --ls-display: -0.035em;
+  --ls-heading: -0.02em;
+  --ls-label: 0.02em;
+
+  /* 색 */
+  --bg: #ffffff;
+  --fg: #0a0a0a;
+  --fg-muted: #6b6b6b;
+  --line: #e2e2e2;
+  --ph-bg: #ebebeb;
+  --ph-fg: #8d8d8d;
+
+  /* 레이아웃 */
+  --max: 1440px;
+  --gutter: 32px;
+  --gap: 16px;
+  --space-s: 24px;
+  --space-m: 48px;
+  --space-l: 96px;
+  --space-xl: 160px;
+
+  /* 작은 간격 · 보조 행간 · 모서리 (2026-11-26 추가, 사용자 승인) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --lh-none: 1;
+  --lh-tight: 1.25;
+  --lh-snug: 1.4;
+  --radius-pill: 999px;   /* 태그 알약 모양 */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-display: var(--fs-48);
+    --fs-statement: var(--fs-32);
+    --fs-h2: var(--fs-24);
+    --gutter: 16px;
+    --gap: 8px;
+    --space-m: 32px;
+    --space-l: 64px;
+    --space-xl: 96px;
+  }
+}
